@@ -10,7 +10,7 @@
 #import "FISPrimeGenerator.h"
 
 @interface FISPrimeTableViewController ()
-
+@property (nonatomic, strong) NSArray *primes;
 @end
 
 @implementation FISPrimeTableViewController
@@ -19,6 +19,24 @@
     [super viewDidLoad];
     
     [self.tableView setAccessibilityIdentifier:@"table"];
+    
+    NSMutableArray *primes = [NSMutableArray arrayWithCapacity:101];
+    for (int i = 0; i < 100; i++)
+    {
+        [primes addObject:@"loading ..."];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            NSUInteger prime = [FISPrimeGenerator primeNumber:i+1+5000];
+            [primes replaceObjectAtIndex:i withObject:[NSNumber numberWithInteger:prime]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+                if (cell)
+                {
+                    [cell.textLabel setText:[NSString stringWithFormat:@"%lu", prime]];
+                }
+            });
+        });
+    }
+    [self setPrimes:primes];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -41,13 +59,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 100;
+    return self.primes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    [cell.textLabel setText:[NSString stringWithFormat:@"%lu", [FISPrimeGenerator primeNumber:indexPath.row+1+2000]]];
+    id textValue = [self.primes objectAtIndex:indexPath.row];
+    if ([textValue isKindOfClass:[NSString class]])
+    {
+        [cell.textLabel setText:[NSString stringWithFormat:@"%@", textValue]];
+    }
+    else if ([textValue isKindOfClass:[NSNumber class]])
+    {
+        [cell.textLabel setText:[NSString stringWithFormat:@"%lu", ((NSNumber *)textValue).integerValue]];
+    }
     
     return cell;
 }
