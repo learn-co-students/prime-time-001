@@ -1,5 +1,5 @@
 //
-//  FISPrimeTableViewController.h
+//  FISPrimeTimeTableViewController.h
 //  PrimeTime
 //
 //  Created by Ken M. Haggerty on 2/5/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FISPrimeTableViewController : UITableViewController
+@interface FISPrimeTimeTableViewController : UITableViewController
 
 @end

@@ -1,19 +1,19 @@
 //
-//  FISPrimeTableViewController.m
+//  FISPrimeTimeTableViewController.m
 //  PrimeTime
 //
 //  Created by Ken M. Haggerty on 2/5/16.
 //  Copyright © 2016 FIS. All rights reserved.
 //
 
-#import "FISPrimeTableViewController.h"
+#import "FISPrimeTimeTableViewController.h"
 #import "FISPrimeGenerator.h"
 
-@interface FISPrimeTableViewController ()
+@interface FISPrimeTimeTableViewController ()
 @property (nonatomic, strong) NSArray *primes;
 @end
 
-@implementation FISPrimeTableViewController
+@implementation FISPrimeTimeTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,18 +23,20 @@
     NSMutableArray *primes = [NSMutableArray arrayWithCapacity:101];
     for (int i = 0; i < 100; i++)
     {
-        [primes addObject:@"loading ..."];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-            NSUInteger prime = [FISPrimeGenerator primeNumber:i+1+5000];
-            [primes replaceObjectAtIndex:i withObject:[NSNumber numberWithInteger:prime]];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-                if (cell)
-                {
-                    [cell.textLabel setText:[NSString stringWithFormat:@"%lu", prime]];
-                }
-            });
-        });
+//        [primes addObject:@"loading ..."];
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//            NSUInteger prime = [FISPrimeGenerator primeNumber:i+1+5000];
+//            [primes replaceObjectAtIndex:i withObject:[NSNumber numberWithInteger:prime]];
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+//                if (cell)
+//                {
+//                    [cell.textLabel setText:[NSString stringWithFormat:@"%lu", prime]];
+//                }
+//            });
+//        });
+        
+        [primes addObject:[NSNumber numberWithInteger:[FISPrimeGenerator primeNumber:i+1+5000]]];
     }
     [self setPrimes:primes];
     
