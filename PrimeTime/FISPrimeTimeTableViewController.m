@@ -16,8 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setValueForFirstOneHundredPrimes];
-    NSLog(@"%@", self.firstOneHundredPrimes);
+    self.primes = [[NSMutableArray alloc] init];
+    [self setValueForPrimes:5000];
+    self.view.accessibilityIdentifier = @"table";
+//    NSLog(@"%@", self.primes);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
 
@@ -37,13 +39,12 @@
     return 100;
 }
 
-- (void)setValueForFirstOneHundredPrimes {
-    self.firstOneHundredPrimes = [[NSMutableArray alloc] init];
-    [self.firstOneHundredPrimes addObject:@"2"];
+- (void)setValueForPrimes:(NSUInteger)primesCount {
+    [self.primes addObject:@"2"];
     NSUInteger i = 3;
-    while ([self.firstOneHundredPrimes count] < 2002) {
+    while ([self.primes count] <= primesCount) {
         if ([self isPrime:i]) {
-            [self.firstOneHundredPrimes addObject:[NSString stringWithFormat:@"%lu", i]];
+            [self.primes addObject:[NSString stringWithFormat:@"%lu", i]];
         }
         i = i + 2;
     }
@@ -60,12 +61,14 @@
     return isPrime;
 }
 
-- (NSUInteger)primeNumber:(NSUInteger)number {
-    [self setValueForFirstOneHundredPrimes];
-    NSString *pnum = [self.firstOneHundredPrimes objectAtIndex:number - 1];
+- (NSUInteger)primeNumber:(NSUInteger)prime {
+    if (!self.primes) {
+        self.primes = [[NSMutableArray alloc] init];
+        [self setValueForPrimes:5000];
+    }
+    NSString *pnum = [self.primes objectAtIndex:prime - 1];
     return [pnum intValue];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *SimpleIdentifier = @"SimpleIdentifier";
@@ -76,10 +79,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SimpleIdentifier];
     }
 
-    cell.textLabel.text = self.firstOneHundredPrimes[indexPath.row];
+    cell.textLabel.text = self.primes[indexPath.row];
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.

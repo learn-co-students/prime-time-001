@@ -10,10 +10,10 @@
 
 @interface FISPrimeTimeTableViewController : UITableViewController
 
-@property (nonatomic) NSMutableArray *firstOneHundredPrimes;
+@property (nonatomic) NSMutableArray *primes;
 
 - (BOOL)isPrime:(NSUInteger)number;
-- (void)setValueForFirstOneHundredPrimes;
-- (NSUInteger)primeNumber:(NSUInteger)number;
+- (void)setValueForPrimes:(NSUInteger)primesCount;
+- (NSUInteger)primeNumber:(NSUInteger)prime;
 
 @end
