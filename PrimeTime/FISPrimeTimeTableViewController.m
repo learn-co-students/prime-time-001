@@ -32,18 +32,16 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 100;
 }
 
 - (void)setValueForFirstOneHundredPrimes {
+    self.firstOneHundredPrimes = [[NSMutableArray alloc] init];
     [self.firstOneHundredPrimes addObject:@"2"];
     NSUInteger i = 3;
-    while ([self.firstOneHundredPrimes count] > 100) {
+    while ([self.firstOneHundredPrimes count] < 100) {
         if ([self isPrime:i]) {
             [self.firstOneHundredPrimes addObject:[NSString stringWithFormat:@"%lu", i]];
         }

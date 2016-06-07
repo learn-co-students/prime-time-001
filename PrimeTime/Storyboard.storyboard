@@ -8,7 +8,7 @@
         <!--Prime Table-->
         <scene sceneID="DLl-aP-ecw">
             <objects>
-                <tableViewController title="Prime Table" id="dpg-XQ-V9F" customClass="FISPrimeTimeTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="table" title="Prime Table" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dpg-XQ-V9F" customClass="FISPrimeTimeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1gV-fY-uBS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
