@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.primes = [[NSMutableArray alloc] init];
-    [self setValueForPrimes:5000];
+    [self setValueForPrimes:5100];
     self.view.accessibilityIdentifier = @"table";
 //    NSLog(@"%@", self.primes);
     // Uncomment the following line to preserve selection between presentations.
@@ -79,7 +79,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SimpleIdentifier];
     }
 
-    cell.textLabel.text = self.primes[indexPath.row];
+    cell.textLabel.text = self.primes[indexPath.row + 2000];
     return cell;
 }
 

@@ -467,10 +467,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrimeTime/PrimeTime-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = PRIME2000;
 				INFOPLIST_FILE = "PrimeTimeTests/PrimeTimeTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FIS.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,6 +488,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrimeTime/PrimeTime-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = PRIME2000;
 				INFOPLIST_FILE = "PrimeTimeTests/PrimeTimeTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FIS.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
