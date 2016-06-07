@@ -79,7 +79,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SimpleIdentifier];
     }
 
-    cell.textLabel.text = self.primes[indexPath.row + 2000];
+    cell.textLabel.text = self.primes[indexPath.row + 5000];
     return cell;
 }
 
