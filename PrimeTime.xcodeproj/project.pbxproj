@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D55491D1BC8520E001E3D77 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D55491C1BC8520E001E3D77 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		3651BB3C1D064AE600668596 /* FISPrimeTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3651BB3B1D064AE600668596 /* FISPrimeTimeTableViewController.m */; };
+		4D55491D1BC8520E001E3D77 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D55491C1BC8520E001E3D77 /* Launch Screen.storyboard */; };
 		726811FB1923ECC5009F8F37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726811FA1923ECC5009F8F37 /* Foundation.framework */; };
 		726811FD1923ECC5009F8F37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726811FC1923ECC5009F8F37 /* CoreGraphics.framework */; };
 		726811FF1923ECC5009F8F37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726811FE1923ECC5009F8F37 /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3651BB3A1D064AE600668596 /* FISPrimeTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISPrimeTimeTableViewController.h; sourceTree = "<group>"; };
+		3651BB3B1D064AE600668596 /* FISPrimeTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISPrimeTimeTableViewController.m; sourceTree = "<group>"; };
 		4D55491C1BC8520E001E3D77 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		726811F71923ECC5009F8F37 /* PrimeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		726811FA1923ECC5009F8F37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +128,8 @@
 				7268120C1923ECC5009F8F37 /* Images.xcassets */,
 				4D55491C1BC8520E001E3D77 /* Launch Screen.storyboard */,
 				726812011923ECC5009F8F37 /* Supporting Files */,
+				3651BB3A1D064AE600668596 /* FISPrimeTimeTableViewController.h */,
+				3651BB3B1D064AE600668596 /* FISPrimeTimeTableViewController.m */,
 			);
 			path = PrimeTime;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3651BB3C1D064AE600668596 /* FISPrimeTimeTableViewController.m in Sources */,
 				726812071923ECC5009F8F37 /* main.m in Sources */,
 				7268120B1923ECC5009F8F37 /* FISAppDelegate.m in Sources */,
 			);
