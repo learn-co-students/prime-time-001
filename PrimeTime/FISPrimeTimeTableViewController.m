@@ -41,7 +41,7 @@
     self.firstOneHundredPrimes = [[NSMutableArray alloc] init];
     [self.firstOneHundredPrimes addObject:@"2"];
     NSUInteger i = 3;
-    while ([self.firstOneHundredPrimes count] < 100) {
+    while ([self.firstOneHundredPrimes count] < 2002) {
         if ([self isPrime:i]) {
             [self.firstOneHundredPrimes addObject:[NSString stringWithFormat:@"%lu", i]];
         }
@@ -51,13 +51,19 @@
 
 - (BOOL)isPrime:(NSUInteger)number {
     bool isPrime = YES;
-    for (NSUInteger i=2; i < sqrt(number); i++) {
+    for (NSUInteger i=2; i <= sqrt(number); i++) {
         if (number % i == 0){
             isPrime = NO;
             break;
         }
     }
     return isPrime;
+}
+
+- (NSUInteger)primeNumber:(NSUInteger)number {
+    [self setValueForFirstOneHundredPrimes];
+    NSString *pnum = [self.firstOneHundredPrimes objectAtIndex:number - 1];
+    return [pnum intValue];
 }
 
 

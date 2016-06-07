@@ -14,5 +14,6 @@
 
 - (BOOL)isPrime:(NSUInteger)number;
 - (void)setValueForFirstOneHundredPrimes;
+- (NSUInteger)primeNumber:(NSUInteger)number;
 
 @end
